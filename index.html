@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Keyboard</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="flex flex-row header pointer">
+      <div  id="login" class="underline bg-gray-200"  onclick="showElement(this)">Login</div>
+      <div  id="register"   onclick="showElement(this)">Register</div>
+    </div>
+    <div class="login">
+      
+      <form id="loginform">
+        <div class="flex flex-col">
+          
+          <label for="email"><span class="material-icons">email</span>Email</label>
+          <input class="input" type="email" id="email" name="email" required />
+        </div>
+        <div class="flex flex-col">
+        
+          <label for="pass">  <span class="material-icons">lock</span>Password</label>
+          <div class="flex flex-row">
+            <input class="input" type="password" id="pass" name="password" required />
+          <input type="checkbox" id="show">
+          </div>
+        </div>
+        <div class="flex flex-row between">
+          <button type="submit" id="submit" class="button btn-grad">Submit</button>
+          
+        </div>
+        
+
+      </form>
+      <p class="underline">Forgot Password</p>
+      <div>
+        <div class="flex flex-row">
+          <input type="checkbox" id="vkey">
+          <p>Use Virtual Keyboard </p>
+
+        </div>
+      </div>
+    </div>
+    <div class="register none">
+      
+      <form id="regform">
+        <div class="flex flex-col">
+        
+          <label for="emailid">  <span class="material-icons">email</span>Email</label>
+          <input class="input" type="email" id="emailid" name="emailid" required />
+        </div>
+        <div class="flex flex-col">
+          <label for="password"> <span class="material-icons">lock</span>Password</label>
+          <div class="flex-flex row">
+            <input class="input" type="password" id="password" name="password" minlength="8"  required />
+          <input type="checkbox" id="showPwd">
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span>Password must contain atleast</span>
+          <div class="flex flex-row m-0 p-0">
+            <span class="validate" id="caps">&#88;</span>
+            <span>1 Capital Letter</span>
+          </div>
+          <div class="flex flex-row m-0 p-0">
+            <span class="validate" id="small">&#88;</span>
+            <span>1 Small Letter</span>
+          </div>
+          <div class="flex flex-row m-0 p-0">
+            <span class="validate" id="spl">&#88;</span>
+            <span>1 Special Character ( ! , @ , # , $ , & , * )</span>
+          </div>
+          <div class="flex flex-row m-0 p-0">
+            <span class="validate" id="number">&#88;</span>
+            <span>1 Number</span>
+          </div>
+          <div class="flex flex-row m-0 p-0">
+            <span class="validate" id="minlen">&#88;</span>
+            <span>8 Characters</span>
+          </div>
+      
+        </div>
+        <div class="flex flex-row between">
+          <button type="submit" id="regbtn" class="button btn-grad key">Submit</button>
+          
+        </div>
+      </form>
+
+    </div>
+    <div id="keyboard" class="none"></div>
+  </div>
+<dialog class="none">
+  <p>Alert!</p>
+  <p id="text">User Created Successfully</p>
+</dialog>
+
+</body>
+<script src="script.js"></script>
+
+</html>
